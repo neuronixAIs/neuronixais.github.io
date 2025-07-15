@@ -1,4 +1,7 @@
-<meta charset="UTF-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neuronix AI</title>
   <style>
@@ -8,3 +11,81 @@
       margin: 0;
       background: #f2f2f2;
     }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    .lang-selector {
+      text-align: right;
+      margin: 1rem;
+    }
+    section {
+      margin: 2rem 0;
+    }
+    .hidden {
+      display: none;
+    }
+    video {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      border: 2px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-selector">
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('it')">Italiano</button>
+    <button onclick="setLang('fa')">فارسی</button>
+  </div>
+
+  <header>
+    <h1 data-en="Neuronix AI" data-it="Neuronix AI" data-fa="Neuronix هوش مصنوعی">Neuronix AI</h1>
+    <p data-en="AI-powered PPE Detection for Workplace Safety"
+       data-it="Rilevamento DPI con AI per la sicurezza"
+       data-fa="تشخیص تجهیزات ایمنی با هوش مصنوعی برای کارگاه‌ها">
+       AI-powered PPE Detection for Workplace Safety
+    </p>
+  </header>
+
+  <section>
+    <h2 data-en="Services" data-it="Servizi" data-fa="خدمات">Services</h2>
+    <ul>
+      <li data-en="Helmet Detection" data-it="Rilevamento Casco" data-fa="تشخیص کلاه ایمنی">Helmet Detection</li>
+      <li data-en="Vest Detection" data-it="Rilevamento Gilet" data-fa="تشخیص جلیقه">Vest Detection</li>
+      <li data-en="Shoe Detection" data-it="Rilevamento Scarpe" data-fa="تشخیص کفش ایمنی">Shoe Detection</li>
+      <li data-en="Mask Detection" data-it="Rilevamento Maschera" data-fa="تشخیص ماسک">Mask Detection</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-en="Demo Video" data-it="Video Dimostrativo" data-fa="ویدیو نمونه">Demo Video</h2>
+    <video controls>
+      <source src="demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section>
+    <h2 data-en="Contact" data-it="Contatto" data-fa="تماس">Contact</h2>
+    <p data-en="Email: neuronix.ai.dev@gmail.com"
+       data-it="Email: neuronix.ai.dev@gmail.com"
+       data-fa="ایمیل: neuronix.ai.dev@gmail.com">
+       Email: neuronix.ai.dev@gmail.com
+    </p>
+  </section>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+    // Default: English
+    setLang('en');
+  </script>
+</body>
+</html>
